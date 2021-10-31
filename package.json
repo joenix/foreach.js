@@ -1,0 +1,11 @@
+{
+  "name": "foreach.js",
+  "version": "2.1.7",
+  "description": "A simple package for easily loop",
+  "main": "index.js",
+  "author": "joenix",
+  "license": "MIT",
+  "dependencies": {
+    "deepeach": "^2.1.5"
+  }
+}
