@@ -20,7 +20,8 @@ function conclusion(index, json, callback) {
 
       // is kv
       if (key && value) {
-        return (json[key] = value);
+        index = key;
+        result = value;
       }
     }
 
