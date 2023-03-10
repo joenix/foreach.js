@@ -3,17 +3,28 @@ import deepeach from 'deepeach';
 
 // Set Copy from Deepeach
 function copy(source) {
-  return deepeach(source, (i) => i, true);
+  return deepeach(source, i => i, true);
 }
 
 // Set Conclusion
-function conclusion(key, json, callback) {
+function conclusion(index, json, callback) {
   // get return
-  let result = callback(json[key], key);
+  let result = callback(json[index], index);
 
   // set newest
   if (result !== undefined) {
-    json[key] = result;
+    // check json
+    if (result && result.constructor === Object) {
+      // try deconstruct from object
+      let { key, value } = result;
+
+      // is kv
+      if (key && value) {
+        return (json[key] = value);
+      }
+    }
+
+    json[index] = result;
   }
 
   // return
