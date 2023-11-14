@@ -55,7 +55,7 @@ function foreach(source, callback, { clone = false, deep = false, stop = false, 
   }
 
   // Special for Array
-  if (json.length !== undefined) {
+  if (json.constructor === Array) {
     // keep step of long
     for (let index = 0; index < json.length; index++) {
       if (index % step !== long) {
