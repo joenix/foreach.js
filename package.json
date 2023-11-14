@@ -1,6 +1,6 @@
 {
   "name": "foreach.js",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "A simple package for easily loop",
   "main": "index.js",
   "author": "joenix",
