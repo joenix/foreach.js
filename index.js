@@ -3,7 +3,7 @@ import deepeach from 'deepeach';
 
 // Set Copy from Deepeach
 function copy(source) {
-  return deepeach(source, i => i, true);
+  return deepeach(source, (i) => i, true);
 }
 
 // Set Conclusion
@@ -74,6 +74,11 @@ function foreach(source, callback, { clone = false, deep = false, stop = false, 
 
   // loop by for-in
   for (let key in json) {
+    // check property
+    if (!json.hasOwnProperty(key)) {
+      continue;
+    }
+
     // keep step of long
     if (key - 0 > -1 && key % step !== long) {
       continue;
