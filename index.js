@@ -74,11 +74,6 @@ function foreach(source, callback, { clone = false, deep = false, stop = false, 
 
   // loop by for-in
   for (let key in json) {
-    // check property
-    if (!json.hasOwnProperty(key)) {
-      continue;
-    }
-
     // keep step of long
     if (key - 0 > -1 && key % step !== long) {
       continue;
